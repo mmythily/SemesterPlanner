@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+
+<GridPane prefHeight="540.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="Controller.java">
+    <HBox alignment="TOP_CENTER" GridPane.columnSpan="7">
+        <Label prefHeight="20.0" prefWidth="51.0" text="Course">
+            <HBox.margin>
+                <Insets bottom="20" left="10" top="20" />
+            </HBox.margin>
+        </Label>
+        <ComboBox fx:id="combox_Course" prefWidth="100.0">
+            <HBox.margin>
+                <Insets bottom="20" top="20" />
+            </HBox.margin>
+        </ComboBox>
+        <Label prefHeight="20.0" prefWidth="83.0" text="Select Week">
+            <HBox.margin>
+                <Insets bottom="20" left="20" top="20" />
+            </HBox.margin>
+        </Label>
+        <ComboBox fx:id="combox_Week" prefWidth="50.0">
+            <HBox.margin>
+                <Insets bottom="20" top="20" />
+            </HBox.margin>
+        </ComboBox>
+        <Label prefHeight="20.0" prefWidth="77.0" text="Percentage">
+            <HBox.margin>
+                <Insets bottom="20" left="20" top="20" />
+            </HBox.margin>
+        </Label>
+        <TextField fx:id="combox_Percent" prefWidth="35">
+            <HBox.margin>
+                <Insets bottom="20" top="20" />
+            </HBox.margin>
+        </TextField>
+        <Label prefHeight="17.0" prefWidth="120.0" text="Type of Evaluation">
+            <HBox.margin>
+                <Insets bottom="20" left="20" top="20" />
+            </HBox.margin>
+        </Label>
+        <ComboBox fx:id="combox_EvalType" prefWidth="100.0">
+            <HBox.margin>
+                <Insets bottom="20" top="20" />
+            </HBox.margin>
+        </ComboBox>
+
+        <Button fx:id="btn_add" text="_Add">
+            <HBox.margin>
+                <Insets bottom="20" left="20" top="20" />
+            </HBox.margin>
+        </Button>
+        <Button fx:id="btn_reset" text="_Reset">
+            <HBox.margin>
+                <Insets bottom="20" left="20" top="20" />
+            </HBox.margin>
+        </Button>
+    </HBox>
+
+    <Label prefHeight="20.0" prefWidth="100.0" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 1" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 2" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 3" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 4" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 5" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 6" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 7" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 8" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 9" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 10" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 11" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 12" GridPane.columnIndex="0" GridPane.rowIndex="13" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 13" GridPane.columnIndex="0" GridPane.rowIndex="14" />
+    <Label prefHeight="40.0" prefWidth="100.0" text="Week 14" GridPane.columnIndex="0" GridPane.rowIndex="15" />
+
+    <TextField fx:id="txt_Course1" prefWidth="140" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <TextField fx:id="txt_Course2" prefWidth="140" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+    <TextField fx:id="txt_Course3" prefWidth="140" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+    <TextField fx:id="txt_Course4" prefWidth="140" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+    <TextField fx:id="txt_Course5" prefWidth="140" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+    <TextField fx:id="txt_Course6" prefWidth="140" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+
+    <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <TextField fx:id="perct_C1" prefWidth="40" />
+        <ComboBox fx:id="type_C1" prefWidth="100" />
+    </HBox>
+
+    <HBox GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <TextField fx:id="perct_C2" prefWidth="40" />
+        <TextField fx:id="type_C2" prefWidth="100" />
+    </HBox>
+
+    <HBox GridPane.columnIndex="3" GridPane.rowIndex="2">
+        <TextField fx:id="perct_C3" prefWidth="40" />
+        <TextField fx:id="type_C3" prefWidth="100" />
+    </HBox>
+
+    <HBox GridPane.columnIndex="4" GridPane.rowIndex="2">
+        <TextField fx:id="perct_C4" prefWidth="40" />
+        <TextField fx:id="type_C4" prefWidth="100" />
+    </HBox>
+
+    <HBox GridPane.columnIndex="5" GridPane.rowIndex="2">
+        <TextField fx:id="perct_C5" prefWidth="40" />
+        <TextField fx:id="type_C5" prefWidth="100" />
+    </HBox>
+
+    <HBox GridPane.columnIndex="6" GridPane.rowIndex="2">
+        <TextField fx:id="perct_C6" prefWidth="40" />
+        <TextField fx:id="type_C6"  prefWidth="100" />
+    </HBox>
+
+</GridPane>
