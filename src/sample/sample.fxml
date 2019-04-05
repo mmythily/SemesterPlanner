@@ -7,3 +7,109 @@
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
 
 </GridPane>
+
+        public void showWeek(ActionEvent e) {
+        week = String.valueOf(combox_Week.getSelectionModel().getSelectedItem());
+        switch (week) {
+        case "1":
+        txt_Course1_Mythily.setText("1");
+        break;
+        case "2":
+        txt_Course1_Mythily.setText("2");
+        break;
+        case "3":
+        txt_Course1_Mythily.setText("3");
+        break;
+        case "4":
+        txt_Course1_Mythily.setText("4");
+        break;
+        case "5":
+        txt_Course1_Mythily.setText("5");
+        break;
+        case "6":
+        txt_Course1_Mythily.setText("6");
+        break;
+        case "7":
+        txt_Course1_Mythily.setText("7");
+        break;
+        case "8":
+        txt_Course1_Mythily.setText("8");
+        break;
+        case "9":
+        txt_Course1_Mythily.setText("9");
+        break;
+        case "10":
+        txt_Course1_Mythily.setText("10");
+        break;
+        }
+        }
+
+
+
+        public void load (MouseEvent e) throws FileNotFoundException {
+        raf = new RandomAccessFile("semester.dat", "rw");
+
+        btn_add.setOnAction(event -> {
+        name = txt_Name.getText();
+        city = txt_City.getText();
+        street = txt_Street.getText();
+        state = txt_Street.getText();
+        String data = name + ", " + street + ", " + city + ", " + state;
+        try {
+        //save(name, city, street, state);
+        save(data);
+
+        } catch (IOException obj) {
+        }
+        }); //instead of onAction="#save"
+        btn_update.setOnAction(event -> {
+        try {
+        update();
+        } catch (IOException e1) {
+        }
+        });
+
+        public void save (String data) throws IOException {
+
+        count++;
+        raf.seek(raf.length());//jump to location
+        //raf.writeUTF(name+",");
+        //raf.writeUTF(street+",");
+        //raf.writeUTF(city+",");
+        //raf.writeUTF(state);
+        raf.writeBytes(data);
+
+        raf.writeBytes(System.lineSeparator());
+        clear();
+        lbl_status.setText("Status:Data added successfully");
+        }
+        public void update () throws IOException {
+        ArrayList<String> list = new ArrayList<>();
+    raf.seek(0);
+    String data = "";
+    while ((data = raf.readLine()) != null) {
+    list.add(data);
+    }
+    if (count <= 0)
+    count = 0;
+    else {
+    count--;
+    }
+    list.remove(count);
+    name = txt_Name.getText();
+    city = txt_City.getText();
+    street = txt_Street.getText();
+    state = txt_Street.getText();
+    String dat = name + ", " + street + ", " + city + ", " + state;
+    list.add(count, dat);
+    raf.setLength(0);
+    for (String d : list) {
+    raf.seek(raf.length());
+    raf.writeBytes(dat);
+    raf.writeBytes(System.lineSeparator());
+    }
+
+    }
+
+
+    }
