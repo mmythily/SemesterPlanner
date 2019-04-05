@@ -1,115 +1,57 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
-
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-
-</GridPane>
-
-        public void showWeek(ActionEvent e) {
-        week = String.valueOf(combox_Week.getSelectionModel().getSelectedItem());
-        switch (week) {
-        case "1":
-        txt_Course1_Mythily.setText("1");
-        break;
-        case "2":
-        txt_Course1_Mythily.setText("2");
-        break;
-        case "3":
-        txt_Course1_Mythily.setText("3");
-        break;
-        case "4":
-        txt_Course1_Mythily.setText("4");
-        break;
-        case "5":
-        txt_Course1_Mythily.setText("5");
-        break;
-        case "6":
-        txt_Course1_Mythily.setText("6");
-        break;
-        case "7":
-        txt_Course1_Mythily.setText("7");
-        break;
-        case "8":
-        txt_Course1_Mythily.setText("8");
-        break;
-        case "9":
-        txt_Course1_Mythily.setText("9");
-        break;
-        case "10":
-        txt_Course1_Mythily.setText("10");
-        break;
-        }
-        }
-
-
-
-        public void load (MouseEvent e) throws FileNotFoundException {
-        raf = new RandomAccessFile("semester.dat", "rw");
-
-        btn_add.setOnAction(event -> {
-        name = txt_Name.getText();
-        city = txt_City.getText();
-        street = txt_Street.getText();
-        state = txt_Street.getText();
-        String data = name + ", " + street + ", " + city + ", " + state;
-        try {
-        //save(name, city, street, state);
-        save(data);
-
-        } catch (IOException obj) {
-        }
-        }); //instead of onAction="#save"
-        btn_update.setOnAction(event -> {
-        try {
-        update();
-        } catch (IOException e1) {
-        }
-        });
-
-        public void save (String data) throws IOException {
-
-        count++;
-        raf.seek(raf.length());//jump to location
-        //raf.writeUTF(name+",");
-        //raf.writeUTF(street+",");
-        //raf.writeUTF(city+",");
-        //raf.writeUTF(state);
-        raf.writeBytes(data);
-
-        raf.writeBytes(System.lineSeparator());
-        clear();
-        lbl_status.setText("Status:Data added successfully");
-        }
-        public void update () throws IOException {
-        ArrayList<String> list = new ArrayList<>();
-    raf.seek(0);
-    String data = "";
-    while ((data = raf.readLine()) != null) {
-    list.add(data);
-    }
-    if (count <= 0)
-    count = 0;
-    else {
-    count--;
-    }
-    list.remove(count);
-    name = txt_Name.getText();
-    city = txt_City.getText();
-    street = txt_Street.getText();
-    state = txt_Street.getText();
-    String dat = name + ", " + street + ", " + city + ", " + state;
-    list.add(count, dat);
-    raf.setLength(0);
-    for (String d : list) {
-    raf.seek(raf.length());
-    raf.writeBytes(dat);
-    raf.writeBytes(System.lineSeparator());
-    }
-
-    }
-
-
-    }
+week = "Week 1";
+        percent = perct_C4_W1.getText();
+        evaluation = type_C4_W1.getText();
+        } else if (combox_Week.getSelectionModel().isSelected(1)) {
+        perct_C4_W2.setText(txt_Percent.getText());
+        type_C4_W2.setText(combox_EvalType.getSelectionModel().getSelectedItem().toString());
+        week = "Week 2";
+        percent = perct_C4_W2.getText();
+        evaluation = type_C4_W2.getText();
+        } else if (combox_Week.getSelectionModel().isSelected(2)) {
+        perct_C4_W3.setText(txt_Percent.getText());
+        type_C4_W3.setText(combox_EvalType.getSelectionModel().getSelectedItem().toString());
+        week = "Week 3";
+        percent = perct_C4_W3.getText();
+        evaluation = type_C4_W3.getText();
+        } else if (combox_Week.getSelectionModel().isSelected(3)) {
+        perct_C4_W4.setText(txt_Percent.getText());
+        type_C4_W4.setText(combox_EvalType.getSelectionModel().getSelectedItem().toString());
+        week = "Week 4";
+        percent = perct_C4_W4.getText();
+        evaluation = type_C4_W4.getText();
+        } else if (combox_Week.getSelectionModel().isSelected(4)) {
+        perct_C4_W5.setText(txt_Percent.getText());
+        type_C4_W5.setText(combox_EvalType.getSelectionModel().getSelectedItem().toString());
+        week = "Week 5";
+        percent = perct_C4_W5.getText();
+        evaluation = type_C4_W5.getText();
+        } else if (combox_Week.getSelectionModel().isSelected(5)) {
+        perct_C4_W6.setText(txt_Percent.getText());
+        type_C4_W6.setText(combox_EvalType.getSelectionModel().getSelectedItem().toString());
+        week = "Week 6";
+        percent = perct_C4_W6.getText();
+        evaluation = type_C4_W6.getText();
+        } else if (combox_Week.getSelectionModel().isSelected(6)) {
+        perct_C4_W7.setText(txt_Percent.getText());
+        type_C4_W7.setText(combox_EvalType.getSelectionModel().getSelectedItem().toString());
+        week = "Week 7";
+        percent = perct_C4_W7.getText();
+        evaluation = type_C4_W7.getText();
+        } else if (combox_Week.getSelectionModel().isSelected(7)) {
+        perct_C4_W8.setText(txt_Percent.getText());
+        type_C4_W8.setText(combox_EvalType.getSelectionModel().getSelectedItem().toString());
+        week = "Week 8";
+        percent = perct_C4_W8.getText();
+        evaluation = type_C4_W8.getText();
+        } else if (combox_Week.getSelectionModel().isSelected(8)) {
+        perct_C4_W9.setText(txt_Percent.getText());
+        type_C4_W9.setText(combox_EvalType.getSelectionModel().getSelectedItem().toString());
+        week = "Week 9";
+        percent = perct_C4_W9.getText();
+        evaluation = type_C4_W9.getText();
+        } else if (combox_Week.getSelectionModel().isSelected(9)) {
+        perct_C4_W10.setText(txt_Percent.getText());
+        type_C4_W10.setText(combox_EvalType.getSelectionModel().getSelectedItem().toString());
+        week = "Week 10";
+        percent = perct_C4_W10.getText();
+        evaluation = type_C4_W10.getText();

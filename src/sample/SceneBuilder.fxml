@@ -11,14 +11,14 @@
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
 <GridPane prefHeight="540.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.121"
-          xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+          xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller" onMouseEntered="#load">
     <HBox alignment="TOP_CENTER" GridPane.columnSpan="6">
         <Label prefHeight="20.0" prefWidth="50.0" text="Course">
             <HBox.margin>
                 <Insets bottom="20" left="10" top="20" />
             </HBox.margin>
         </Label>
-        <ComboBox fx:id="combox_Course" prefWidth="140.0" onAction="#showCourse">
+        <ComboBox fx:id="combox_Course" prefWidth="140.0" onAction="#showCourse" >
             <HBox.margin>
                 <Insets bottom="20" top="20" />
             </HBox.margin>
@@ -31,12 +31,12 @@
                 </FXCollections>
             </items>
         </ComboBox>
-        <Label prefHeight="20.0" prefWidth="83.0" text="Select Week">
+        <Label prefHeight="20.0" prefWidth="83.0" text="Select Week" >
             <HBox.margin>
                 <Insets bottom="20" left="20" top="20" />
             </HBox.margin>
         </Label>
-        <ComboBox fx:id="combox_Week" prefWidth="100.0">
+        <ComboBox fx:id="combox_Week" prefWidth="100.0" onAction="#saveP">
             <HBox.margin>
                 <Insets bottom="20" top="20" />
             </HBox.margin>
@@ -66,7 +66,7 @@
                 <Insets bottom="20" left="20" top="20" />
             </HBox.margin>
         </Label>
-        <TextField fx:id="txt_Percent" prefWidth="35">
+        <TextField fx:id="txt_Percent" prefWidth="35" onAction="#saveP">
             <HBox.margin>
                 <Insets bottom="20" top="20" />
             </HBox.margin>
@@ -78,8 +78,9 @@
                 <Insets bottom="20" left="20" top="20" />
             </HBox.margin>
         </Label>
-        <ComboBox fx:id="combox_EvalType" prefWidth="140.0">
+        <ComboBox fx:id="combox_EvalType" prefWidth="140.0" onAction="#saveP">
             <HBox.margin>
+                <Insets bottom="20" top="20" />
                 <Insets bottom="20" top="20" />
             </HBox.margin>
             <items>
@@ -116,7 +117,7 @@
         </HBox.margin>
     </Button>
 
-    <Button fx:id="btn_update" text="_Update" prefHeight="40" prefWidth="140.0" GridPane.columnIndex="5" GridPane.rowIndex="5" GridPane.rowSpan="2">
+    <Button fx:id="btn_save" text="_Save" prefHeight="40" prefWidth="140.0" GridPane.columnIndex="5" GridPane.rowIndex="5" GridPane.rowSpan="2">
         <HBox.margin>
             <Insets bottom="20" left="20" top="20" />
         </HBox.margin>
@@ -137,8 +138,8 @@
 
 
     <HBox GridPane.columnIndex="1" GridPane.rowIndex="2">
-        <TextField fx:id="perct_C1_W1" prefWidth="40" />
-        <TextField fx:id="type_C1_W1" prefWidth="100" />
+        <TextField fx:id="perct_C1_W1" prefWidth="40" onAction="#saveP"/>
+        <TextField fx:id="type_C1_W1" prefWidth="100" onAction="#saveP" />
     </HBox>
 
     <HBox GridPane.columnIndex="2" GridPane.rowIndex="2">
